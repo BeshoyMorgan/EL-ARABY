@@ -1,0 +1,119 @@
+<!-- <div class="card d-lg-flex d-block" style="width: 40%; height: min-content">
+  <img
+    [src]="prd.Photos"
+    class="card-img-top"
+    style="height: 600px"
+    alt="..."
+  />
+  <div class="card-body">
+    <h5 class="card-title">Name: {{ prd.gameName }}</h5>
+    <div>
+      <h6 class="card-subtitle mb-2">
+        Price: <span class="text-muted">{{ prd.Price | myCurrency }}</span>
+      </h6>
+      <h6 class="card-text mb-2">
+        Description: <span class="text-muted">{{ prd.Description }}</span>
+      </h6>
+    </div>
+  </div>
+  <button type="button" class="btn btn-secondary" (click)="back()">
+    Go Back
+  </button>
+
+  <div style="display: flex" class="w-100">
+    <button
+      type="button"
+      class="btn btn-info text-white w-50"
+      (click)="Previous()"
+      [disabled]="currentProductID == prdIDList[0]"
+    >
+      Previous
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary w-50"
+      (click)="Next()"
+      [disabled]="currentProductID == prdIDList[prdIDList.length - 1]"
+    >
+      Next
+    </button>
+  </div>
+</div> -->
+
+<!-- Card 2 -->
+<div class="card mb-3" style="width: 100%">
+  <div class="row g-0 d-md-flex">
+    <div class="col-md-4 w-50 card_Img">
+      <img
+        [src]="prd.img"
+        style="object-fit: fill"
+        class="img-fluid rounded-start h-100"
+        alt="..."
+      />
+    </div>
+
+    <div class="col-md-7 w-50 card_Body" style="position: relative">
+      <!-- style="height: 30rem" -->
+      <div class="card-body h-100" style="margin-bottom: 120px">
+        <h5 class="card-title">{{ prd.name }}</h5>
+        <p class="card-text">
+          {{ showMore ? prd.description : (prd.description | slice : 0 : 100) }}
+          <span *ngIf="!showMore">...</span>
+          <a
+            href="javascript:;"
+            style="text-decoration: none"
+            *ngIf="!showMore"
+            (click)="showMore = true"
+            >Show More</a
+          >
+          <a
+            href="javascript:;"
+            style="text-decoration: none"
+            *ngIf="showMore"
+            (click)="showMore = false"
+            >Show Less</a
+          >
+        </p>
+        <p class="card-text">
+          <small class="text-muted">{{ prd.price | myCurrency }}</small>
+        </p>
+
+        <!--  -->
+      </div>
+      <!-- card-footer -->
+      <section class="card-footer bg-transparent card_Footer">
+        <!-- <button type="button" class="btn btn-secondary w-100" (click)="back()">
+          Go Back
+        </button> -->
+
+        <div
+          style="display: flex; gap: 10%"
+          class="w-100 justify-content-center mt-2 mb-0"
+        >
+          <button
+            type="button"
+            class="btn btn-primary text-white w-25 ml-3 next_prev"
+            (click)="Previous()"
+            [disabled]="currentProductID == prdIDList[0]"
+            style ="width: auto;height: auto;border: none;"
+
+            >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+          </svg>          </button>
+          <button
+            type="button"
+            class="btn btn-primary w-25 mr-3 next_prev"
+            (click)="Next()"
+            [disabled]="currentProductID == prdIDList[prdIDList.length - 1]"
+            style ="width: auto;height: auto;border: none;"
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+          </svg>
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

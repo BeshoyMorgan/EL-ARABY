@@ -1,0 +1,63 @@
+
+
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div
+        class="mm col-md-12 col-lg-12 col-xl-12 h-50 d-flex justify-content-center align-items-center"
+      >
+        <img
+          src="https://i.pinimg.com/280x280_RS/4f/0d/90/4f0d902fcb469ca79bb4ad7b8daf4f63.jpg"
+          class="img-fluid w-50 w-lg-100 h-100 align-self-center mt-lg-5"
+          alt="Sample image"
+          style="width: 75% !important"
+        />
+      </div>
+      
+      <div class="col-md-12 col-lg-12 col-xl-12 offset-xl-1 cn">
+        <form>
+          <div class="d-flex justify-content-between align-items-center"></div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button
+              class="btn btn-lg btn-primary text-white m-2"
+              (click)="userLogout()"
+              [disabled]="!auth"
+            >
+              <!-- btn-danger style="background-color: plum" btn-primary-->
+              Logout
+            </button>
+            <button
+              class="btn btn-primary text-white btn-lg m-2"
+              (click)="goLogin()"
+              [disabled]="auth"
+            >
+              Login Page
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5"
+  >
+    <div>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="#!" class="text-white">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </div>
+</section>
+
